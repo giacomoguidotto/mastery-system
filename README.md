@@ -34,12 +34,16 @@ This is not an accredited credential, a content course, or a promise that privat
 - Module work happens in small `/teach` workspaces with explicit contracts.
 - Program-level progress is reviewed from the Git delta.
 
+## Current focus
+
+Active module: [RAG Evaluation for Program Docs](./tracks/cs-ai-systems/rag-evaluation/) in the CS/AI Systems track.
+
 ## Current structure
 
 - [PROGRAM.md](./PROGRAM.md) defines the mission, principles, scope, and constraints.
 - [ROADMAP.md](./ROADMAP.md) tracks active phases, tracks, and candidate modules.
 - [PROGRESS.md](./PROGRESS.md) records module progress and weekly review outcomes.
-- [ARTIFACTS.md](./ARTIFACTS.md) indexes public proof and validated evidence.
+- [ARTIFACTS.md](./ARTIFACTS.md) indexes validated artifacts and public proof.
 - [IDEAS.md](./IDEAS.md) captures future tracks, essays, modules, and experiments.
 - [CONTEXT.md](./CONTEXT.md) defines the domain language agents should use.
 

@@ -4,16 +4,16 @@ Use this file as the compact program ledger. Detailed module work lives in each 
 
 ## Current status
 
-- Program status: setup
+- Program status: active
 - Active track: CS/AI Systems
-- Active phase: Phase 0
-- Active module: RAG Evaluation for Program Docs
+- Active phase: Phase 1 - first module execution
+- Active module: [RAG Evaluation for Program Docs](./tracks/cs-ai-systems/rag-evaluation/)
 
 ## Module ledger
 
-| Module | Track | Status | Evidence | Validated artifact | Public proof |
-| --- | --- | --- | --- | --- | --- |
-| RAG Evaluation for Program Docs | CS/AI Systems | Contract written | Pending | Pending | Pending |
+| Module | Track | Status | Proof status |
+| --- | --- | --- | --- |
+| [RAG Evaluation for Program Docs](./tracks/cs-ai-systems/rag-evaluation/) | CS/AI Systems | In progress | Validated artifact pending |
 
 ## Weekly reviews
 

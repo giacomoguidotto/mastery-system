@@ -17,6 +17,7 @@ This repo is the public operating system for the Personal Mastery Program.
 - Use Conventional Commits for all commits.
 - Run `bash scripts/validate.sh` before claiming the repo is validated.
 - Treat public output as evidence, not performance theater.
+- Keep root docs low-churn: track phases, active modules, weekly review outcomes, validated artifacts, and public proof. Do not mirror lesson-level progress in root files.
 - Distinguish artifact levels:
   - Evidence: rough proof that learning happened.
   - Validated artifact: checked and worth indexing.
@@ -45,7 +46,7 @@ git diff --stat HEAD@{1.week.ago}..HEAD 2>/dev/null || true
 git status --short
 ```
 
-Then update `reviews/YYYY-MM-DD.md`, `PROGRESS.md`, `ARTIFACTS.md`, and `ROADMAP.md` as needed.
+Then update `reviews/YYYY-MM-DD.md`, `PROGRESS.md`, and `ROADMAP.md` as needed. Update `ARTIFACTS.md` only when there is a new validated artifact or public proof.
 
 ## Agent skills
 

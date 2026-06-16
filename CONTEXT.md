@@ -36,4 +36,4 @@ Named external authority for a module: textbook, university course, paper, offic
 
 ## Weekly Review
 
-The program-level review ritual. It starts from Git history and updates progress, artifacts, roadmap, and next-week allocation.
+The program-level review ritual. It starts from Git history and updates progress, roadmap, and next-week allocation. It updates the artifact index only when something becomes a validated artifact or public proof.

@@ -4,14 +4,19 @@ This roadmap is intentionally lightweight. It should steer the next cycle, not p
 
 ## Current phase
 
-Phase 0: Program setup and first-cycle design.
+Phase 1: First module execution.
 
 Goals:
 
-- Establish repo operating rules.
-- Define the first 8-12 week outcome.
-- Choose the first module sequence.
-- Start the first `/teach` module with a module contract.
+- Keep the top-level program operating system lightweight and current.
+- Complete the active module's validated artifact path.
+- Defer second-module selection until this module has a clear validated artifact path.
+
+## Active module
+
+[RAG Evaluation for Program Docs](./tracks/cs-ai-systems/rag-evaluation/) is the first CS/AI Systems module.
+
+Module-local lesson state lives inside the module workspace. Root roadmap updates should happen only when the active module, phase, milestone, or next module decision changes.
 
 ## Active track: CS/AI Systems
 
@@ -41,7 +46,7 @@ Candidate modules:
 
 - Transformers intuition
 - Embeddings and representation learning
-- RAG evaluation
+- RAG evaluation (active: RAG Evaluation for Program Docs)
 - Fine-tuning and adaptation
 - Inference and serving constraints
 
@@ -85,6 +90,6 @@ Candidate modules:
 - Interview loops
 - Public progress updates
 
-## Next decision
+## Next oversight decision
 
-Choose the first module and write its `MODULE_CONTRACT.md`.
+After the active module produces a validated artifact, decide whether to polish it into public proof or move to the next CS/AI Systems module.

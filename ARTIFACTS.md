@@ -1,6 +1,8 @@
 # Artifacts
 
-This is the public proof index. Add only artifacts that are worth re-finding.
+This is the curated proof index. Add only validated artifacts and public proof that are worth re-finding later.
+
+Lesson pages, reference notes, exercises, and rough evidence live in module workspaces and weekly reviews. Do not mirror every module-local file here.
 
 ## Levels
 
