@@ -18,6 +18,7 @@ This repo is the public operating system for the Personal Mastery Program.
 - Run `bash scripts/validate.sh` before claiming the repo is validated.
 - Treat public output as evidence, not performance theater.
 - Keep root docs low-churn: track phases, active modules, weekly review outcomes, validated artifacts, and public proof. Do not mirror lesson-level progress in root files.
+- Publish progress before ending: when an agent creates a lesson, learning record, reference page, or other concrete progress artifact, run validation, stage the intended files, commit with a Conventional Commit, and push. Do not leave completed work merely staged or local unless the user explicitly asks for that.
 - Distinguish artifact levels:
   - Evidence: rough proof that learning happened.
   - Validated artifact: checked and worth indexing.
