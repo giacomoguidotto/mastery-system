@@ -4,6 +4,10 @@ Current source scan: 2026-06-16.
 
 ## Knowledge
 
+- [Paper: "Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks" - Lewis et al.](https://arxiv.org/abs/2005.11401)
+  Seminal RAG paper introducing the combination of parametric model memory with non-parametric retrieved memory for generation. Use for: the high-level reason RAG exists, especially provenance, updateability, and knowledge-intensive tasks.
+- [LangChain RAG tutorial](https://docs.langchain.com/oss/python/langchain/rag)
+  Practical overview of building question-answering over a specific source corpus. Use for: the system shape of loading documents, splitting, retrieving, and answering from context.
 - [DeepEval RAG evaluation guide](https://deepeval.com/guides/guides-rag-evaluation)
   Primary hands-on source for this module. Use for: splitting retriever and generator evaluation, contextual precision/recall/relevancy, answer relevancy, faithfulness, and CI-style RAG checks.
 - [DeepEval quickstart and tracing workflow](https://deepeval.com/docs/getting-started)
