@@ -10,6 +10,15 @@ The portfolio control plane. It owns capability priorities, project mappings, le
 
 A durable ability that can be demonstrated, reassessed, and transferred across tasks or projects.
 
+## Capability Status
+
+The current evidence-bounded assessment of a Capability:
+
+- **Not assessed:** no defensible judgment yet.
+- **Developing:** evidence shows progress, but performance is not yet reliable under realistic constraints.
+- **Demonstrated:** Validated Evidence supports independent performance in a realistic project.
+- **Transferable:** evidence across contexts supports adapting the capability to unfamiliar situations and guiding others.
+
 ## Learning Cycle
 
 A temporary PMP issue that binds one primary capability to a real project decision or use case, starting diagnosis, evidence target, and assessment method. It is not an implementation ticket.
@@ -24,7 +33,7 @@ A bounded investigation of authoritative constraints before a high-cost decision
 
 ## Evidence
 
-Observable work that may support an assessment. PMP links to evidence in its owning project rather than copying it.
+Observable, possibly rough work that may support an Assessment. PMP links to Evidence in its owning project rather than copying it.
 
 ## Validated Evidence
 

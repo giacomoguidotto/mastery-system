@@ -22,13 +22,9 @@ The program is career-directed, but capability comes before portfolio theater. I
 
 ## How it works
 
-1. Select a durable capability and a real decision or use case in an active project.
-2. Open a temporary learning cycle in this repo.
-3. Do reconnaissance before high-cost domain decisions, then use the project's normal design and delivery workflow.
-4. Keep specs, ADRs, code, tests, and operational evidence in the project that owns them.
-5. Assess the linked evidence here and update the capability only when the judgment changes.
+PMP binds a durable capability to timely work in a Project Lab, then assesses the evidence produced there. The detailed operating model lives in [PROGRAM.md](./PROGRAM.md); agent execution rules live in [AGENTS.md](./AGENTS.md).
 
-PMP does not copy project documentation and does not require a permanent course workspace for every learning need.
+PMP does not copy project documentation or require a permanent course workspace for every learning need.
 
 ## Repo map
 

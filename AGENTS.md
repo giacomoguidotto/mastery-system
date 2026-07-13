@@ -24,21 +24,18 @@ This repo is the public control plane for the Personal Mastery Program.
 
 1. Bind one primary Capability to a real Project Lab decision or use case.
 2. Record the starting diagnostic, knowledge risk, evidence target, and assessment method in the PMP issue.
-3. In the project repo, follow its normal shaping-to-delivery workflow.
+3. In the project repo, follow `wayfinder` or `grill-with-docs` → `prototype` when empirical exploration is needed → `to-spec` → `to-tickets` → `implement` → `code-review`.
 4. Use `domain-reconnaissance` before settling a high-cost decision involving unfamiliar domain constraints. Trigger it again if implementation or review challenges a load-bearing assumption.
-5. Keep the reconnaissance packet and resulting decisions in the project repo.
-6. Return to PMP for teaching, oral defense, evidence review, and assessment.
-7. Close the cycle. Update `CAPABILITIES.md` only if its priority, binding, status, or validated evidence changed.
+5. Treat reconnaissance as input to the current stage, not a parallel workflow. Before shaping, return its packet to the grill. On a later trigger, pause delivery and reopen the affected decision, spec, and tickets; resume only when they agree again.
+6. Keep the reconnaissance packet and resulting decisions in the project repo.
+7. Return to PMP for teaching, oral defense, evidence review, and assessment.
+8. Close the cycle. Update `CAPABILITIES.md` only if its priority, binding, status, or validated evidence changed.
 
 Do not make PMP a blocking approval step for routine project work.
 
 ## Evidence rules
 
-- Evidence: rough proof that learning or work happened.
-- Validated Evidence: checked and worth indexing.
-- Public Proof: validated evidence packaged for external readers.
-
-Assess only what the linked evidence supports. Never advance a capability from plans, prose, or unverified agent output alone.
+Use the evidence levels and Capability Status values defined in `CONTEXT.md`. Assess only what the linked Evidence supports. Never advance a Capability from plans, prose, or unverified agent output alone.
 
 ## Weekly review
 

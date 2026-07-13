@@ -8,26 +8,13 @@ A formal Master's remains optional. The immediate goal is stronger judgment and 
 
 ## Operating model
 
-PMP has five core objects:
-
-- **Capability:** a durable ability worth demonstrating across more than one task or project.
-- **Learning Cycle:** a temporary, bounded effort to improve or assess one capability through a real decision or use case.
-- **Project Lab:** an external project where the decision, implementation, and operational consequences are real.
-- **Evidence:** a link to observable work in its owning project.
-- **Assessment:** PMP's explicit judgment of what that evidence demonstrates.
+PMP coordinates Capabilities, Learning Cycles, Project Labs, Evidence, and Assessments as defined in [CONTEXT.md](./CONTEXT.md).
 
 Capabilities outlive cycles. Cycles close. Project artifacts stay in project repos. PMP stores links and judgments, not copies.
 
 ## The loop
 
-1. Choose a capability gap and a timely project seam.
-2. Open a PMP learning-cycle issue using the issue template.
-3. Diagnose the starting level and define evidence that could change the assessment.
-4. Work in the project repo using its normal shaping and delivery flow.
-5. Before settling a high-cost domain decision, run domain reconnaissance against primary authorities. Reopen it later if implementation or review invalidates a load-bearing assumption.
-6. Pull in teaching, exercises, or prototypes only when they resolve a demonstrated gap.
-7. Review the project evidence, record the assessment in the cycle, and close it.
-8. Update [CAPABILITIES.md](./CAPABILITIES.md) only when priority, project mapping, or assessed status changes.
+A cycle diagnoses a gap, binds it to a real project seam, and defines evidence that could change an assessment. Work then follows the owning project's normal shaping and delivery flow. Teaching and prototypes are pulled in only when they resolve a demonstrated gap. The executable agent workflow lives in [AGENTS.md](./AGENTS.md).
 
 ## Project boundary
 
@@ -51,18 +38,13 @@ For active project labs, add this thin instruction to the project's agent guidan
 
 > Before settling a high-cost decision involving unfamiliar domain constraints, use `domain-reconnaissance` and treat its decision packet as input to shaping. Trigger it again if implementation or review reveals that a load-bearing assumption may be wrong. Keep the decision and all downstream artifacts in this project.
 
+A candidate project becomes an active Project Lab only when this instruction is installed in that project and a PMP Learning Cycle links to the owning project issue. Candidate mappings alone do not activate PMP behavior.
+
 ## Portfolio strategy
 
 The highest-leverage target is production-shaped work that combines several current gaps without forcing unrelated technology into one project. Strong evidence may span multiple projects.
 
-Prioritize:
-
-1. cloud, Kubernetes, and infrastructure as code
-2. production agents, tool calling, retrieval, and evaluation
-3. technical discovery and end-to-end delivery
-4. observability, SLOs, and incident ownership
-5. data, retrieval, and distributed-systems depth
-6. target ecosystems, domain fluency, performance engineering, and senior-scope evidence
+The current ordering and project hypotheses live only in [CAPABILITIES.md](./CAPABILITIES.md).
 
 Select technology because the product and domain require it. A résumé checkbox is not sufficient justification.
 
@@ -81,11 +63,7 @@ An artifact can be useful without changing the assessed status. Claims should be
 
 ## Evidence levels
 
-- **Evidence:** rough proof that learning or work happened.
-- **Validated Evidence:** checked against tests, sources, benchmarks, operational behavior, or review and worth indexing.
-- **Public Proof:** validated evidence packaged for an external audience.
-
-Public proof is optional. Validated evidence is required for a capability assessment to advance.
+Use the evidence levels defined in [CONTEXT.md](./CONTEXT.md). Public Proof is optional. Validated Evidence is required for a Capability assessment to advance.
 
 ## Cadence
 
