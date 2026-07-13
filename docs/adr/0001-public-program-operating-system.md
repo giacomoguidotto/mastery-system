@@ -1,11 +1,11 @@
 # Public Program Operating System
 
-![Status: Accepted](https://img.shields.io/badge/status-accepted-brightgreen)
+![Status: Superseded](https://img.shields.io/badge/status-superseded-lightgrey)
 
-Status: Accepted
+Status: Superseded
 Date: 2026-06-14
 Supersedes: None
-Superseded by: None
+Superseded by: 0002-capability-led-project-grounded-program.md
 
 ## Decision
 

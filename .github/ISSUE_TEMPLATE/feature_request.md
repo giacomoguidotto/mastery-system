@@ -1,6 +1,6 @@
 ---
 name: Feature request
-about: Propose a module, workflow, artifact, or repo improvement
+about: Propose a capability, workflow, assessment, or repo improvement
 title: "feat: "
 labels: needs-triage
 ---
@@ -18,4 +18,3 @@ labels: needs-triage
 
 
 ## Completion signal
-

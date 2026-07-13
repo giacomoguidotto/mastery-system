@@ -1,45 +1,48 @@
 # Agent Instructions
 
-This repo is the public operating system for the Personal Mastery Program.
+This repo is the public control plane for the Personal Mastery Program.
 
 ## Source of truth
 
-- Notion contains canonical cross-project context. Check it narrowly when the request clearly needs current project conventions.
+- Notion contains canonical cross-project context. Check it narrowly when current project context is necessary.
 - The Notion `build` page is canonical for shared OSS repo conventions.
 - The Notion `Personal Mastery Program` page is canonical for high-level positioning unless this repo has since been intentionally updated.
-- Do not write to Notion without explicit approval.
-- In this repo, agents are teachers, planners, examiners, and critics. Textbooks, university courses, papers, official docs, source code, benchmarks, and project behavior are the authorities.
+- Do not write to Notion without explicit approval or copy canonical Notion knowledge into this repo.
+- Read `PROGRAM.md`, `CAPABILITIES.md`, `CONTEXT.md`, and relevant accepted ADRs before changing the operating model.
+- Agents may teach, plan, examine, and critique. Official docs, standards, textbooks, papers, source code, benchmarks, and observed behavior are the authorities.
 
-## Program rules
+## Program model
 
-- Optimize for capability first and legibility second.
-- Keep docs short, agent-operational, and easy to update.
-- Use Conventional Commits for all commits.
-- Run `bash scripts/validate.sh` before claiming the repo is validated.
-- Treat public output as evidence, not performance theater.
-- Keep root docs low-churn: track phases, active modules, weekly review outcomes, validated artifacts, and public proof. Do not mirror lesson-level progress in root files.
-- Publish progress before ending: when an agent creates a lesson, learning record, reference page, or other concrete progress artifact, run validation, stage the intended files, commit with a Conventional Commit, and push. Do not leave completed work merely staged or local unless the user explicitly asks for that.
-- Distinguish artifact levels:
-  - Evidence: rough proof that learning happened.
-  - Validated artifact: checked and worth indexing.
-  - Public proof: polished enough to show externally.
+- `CAPABILITIES.md` is the only durable capability, priority, project-binding, and validated-evidence registry.
+- Active Learning Cycles are GitHub Issues created from the learning-cycle template.
+- A Project Lab owns its reconnaissance, decisions, issues, ADRs, prototypes, specs, tickets, code, tests, reviews, and operational evidence.
+- PMP links to project artifacts and assesses them. Do not copy their content here.
+- Teaching is pull-based. Create a lesson or exercise only when a cycle exposes a specific learning gap; do not create permanent module scaffolding by default.
+- Keep root docs short and low-churn. Put review history in `reviews/`, active state in issues, and project state in project repos.
 
-## `/teach` overlay
+## Learning-cycle behavior
 
-When `/teach` is used inside a PMP module workspace:
+1. Bind one primary Capability to a real Project Lab decision or use case.
+2. Record the starting diagnostic, knowledge risk, evidence target, and assessment method in the PMP issue.
+3. In the project repo, follow its normal shaping-to-delivery workflow.
+4. Use `domain-reconnaissance` before settling a high-cost decision involving unfamiliar domain constraints. Trigger it again if implementation or review challenges a load-bearing assumption.
+5. Keep the reconnaissance packet and resulting decisions in the project repo.
+6. Return to PMP for teaching, oral defense, evidence review, and assessment.
+7. Close the cycle. Update `CAPABILITIES.md` only if its priority, binding, status, or validated evidence changed.
 
-1. Ensure `MODULE_CONTRACT.md` exists before normal `/teach` lesson work begins.
-2. If it is missing, interview briefly and create it from `templates/MODULE_CONTRACT.md`.
-3. Then create or update the normal `/teach` files: `MISSION.md`, `RESOURCES.md`, `lessons/`, `reference/`, `learning-records/`, and `NOTES.md`.
-4. Keep one coherent mission per module workspace.
-5. Lessons must be grounded in named sources from `RESOURCES.md`.
-6. The module exam or assessment mix must follow the module contract, not a universal template.
+Do not make PMP a blocking approval step for routine project work.
+
+## Evidence rules
+
+- Evidence: rough proof that learning or work happened.
+- Validated Evidence: checked and worth indexing.
+- Public Proof: validated evidence packaged for external readers.
+
+Assess only what the linked evidence supports. Never advance a capability from plans, prose, or unverified agent output alone.
 
 ## Weekly review
 
-Weekly reviews start from Git history, not memory.
-
-Use:
+Start from evidence, not memory:
 
 ```sh
 git log --oneline --since="1 week ago"
@@ -47,18 +50,17 @@ git diff --stat HEAD@{1.week.ago}..HEAD 2>/dev/null || true
 git status --short
 ```
 
-Then update `reviews/YYYY-MM-DD.md`, `PROGRESS.md`, and `ROADMAP.md` as needed. Update `ARTIFACTS.md` only when there is a new validated artifact or public proof.
+Then inspect open learning-cycle issues and the linked project commits, decisions, tests, deployments, or reviews. Create `reviews/YYYY-MM-DD.md` from the template. Update `CAPABILITIES.md` only when the review changes a durable judgment.
+
+## Repository operations
+
+- Use Conventional Commits.
+- Run `bash scripts/validate.sh` before claiming the repo is validated.
+- When an agent completes a review, assessment, lesson, or capability-registry change, validate, stage only the intended files, commit, and push unless the user explicitly asks to keep the work local.
+- Project artifacts follow the owning project's publication rules.
 
 ## Agent skills
 
-### Issue tracker
-
-Issues and PRDs live in this repo's GitHub Issues. See `docs/agents/issue-tracker.md`.
-
-### Triage labels
-
-Use the default five-label triage vocabulary. See `docs/agents/triage-labels.md`.
-
-### Domain docs
-
-This is a single-context repo: read root `CONTEXT.md` and relevant ADRs in `docs/adr/`. See `docs/agents/domain.md`.
+- Issues and PRDs use GitHub Issues. See `docs/agents/issue-tracker.md`.
+- Use the five-label vocabulary in `docs/agents/triage-labels.md`.
+- Read the domain guidance in `docs/agents/domain.md`.

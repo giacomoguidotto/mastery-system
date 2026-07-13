@@ -13,9 +13,10 @@ bash scripts/validate.sh
 ## Contribution boundaries
 
 - Keep docs short and operational.
-- Do not add broad curriculum content without a clear module contract or roadmap decision.
+- Put active learning work in a Learning Cycle issue, not a new root ledger or permanent module tree.
 - Prefer high-trust sources over agent-generated explanation.
-- Do not polish raw learning work in a way that hides uncertainty.
+- Link project evidence from its owning repo instead of copying it here.
+- Keep assessments narrower than the evidence.
 - Use Conventional Commits.
 
 ## Pull requests
@@ -25,4 +26,4 @@ Include:
 - what changed
 - why it matters for the program
 - validation performed
-- links to any related issue, module, artifact, or review
+- links to any related capability, cycle, project evidence, or review

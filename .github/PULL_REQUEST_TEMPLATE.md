@@ -10,12 +10,12 @@
 
 - [ ] Ran `bash scripts/validate.sh`
 
-## Artifact impact
-
-- [ ] No artifact index change needed
-- [ ] Updated `ARTIFACTS.md`
-
 ## Program impact
 
-- [ ] No roadmap/progress change needed
-- [ ] Updated `ROADMAP.md` or `PROGRESS.md`
+- [ ] No durable capability change
+- [ ] Updated `CAPABILITIES.md` with evidence-backed changes
+
+## Ownership
+
+- [ ] Project artifacts remain linked in their owning repos
+- [ ] No duplicated project state was added here

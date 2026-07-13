@@ -2,6 +2,6 @@
 
 Weekly reviews live here.
 
-Start from Git history, then update `PROGRESS.md` and `ROADMAP.md` as needed. Use `templates/WEEKLY_REVIEW.md` for new reviews.
+Start from this repo's Git history, open Learning Cycle issues, and the linked evidence in each Project Lab. Use `templates/WEEKLY_REVIEW.md` for new reviews.
 
-Update `ARTIFACTS.md` only when a review promotes something to validated artifact or public proof.
+Record decisions and assessment changes, not a second project progress log. Update `CAPABILITIES.md` only when a durable priority, binding, status, or validated-evidence link changes.

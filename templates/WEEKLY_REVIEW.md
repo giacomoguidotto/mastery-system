@@ -1,37 +1,31 @@
 # Weekly Review: YYYY-MM-DD
 
-## Delta
+## Evidence inspected
 
-- Commits reviewed:
-- Modules changed:
-- Public artifacts:
+- PMP commits and issues:
+- Project commits and decisions:
+- Tests, benchmarks, deployments, or reviews:
 
-## Progress
-
-- Completed:
-- In progress:
-- Blocked:
-
-## Evidence
-
-- Repos:
-- Demos:
-- Essays:
-- Benchmarks:
-- Reproductions:
-- Pull requests:
-- Project milestones:
-
-## Decisions
+## Learning cycles
 
 - Continue:
-- Stop:
-- Start:
-- Rebalance:
+- Close and assess:
+- Stop or redesign:
+- Open next:
 
-## Next Week
+## Assessment changes
 
-- Main module:
-- Supporting module:
-- Proof target:
+| Capability | Previous | New | Evidence and limits |
+| --- | --- | --- | --- |
+
+## Portfolio decisions
+
+- Priority or project-binding changes:
+- Public proof worth packaging:
+- Main risk or unknown:
+
+## Next week
+
+- Dominant cycle:
+- Evidence target:
 - Time allocation:

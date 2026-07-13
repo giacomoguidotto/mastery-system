@@ -17,8 +17,10 @@ This is currently a single-context repo:
 ```text
 /
 |-- CONTEXT.md
+|-- PROGRAM.md
+|-- CAPABILITIES.md
 |-- docs/adr/
-|-- tracks/
+|-- reviews/
 `-- templates/
 ```
 

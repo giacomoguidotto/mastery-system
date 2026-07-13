@@ -5,8 +5,8 @@
 <h1 align="center">Personal Mastery Program</h1>
 
 <p align="center">
-  <strong>A self-directed graduate-level curriculum tailored to your goals.</strong><br>
-  <sub>CS/AI Systems for AI-native backend and product infrastructure engineering.</sub>
+  <strong>A capability system grounded in real software projects.</strong><br>
+  <sub>Learn what a consequential design decision requires, apply it in its owning project, then assess the evidence.</sub>
 </p>
 
 <p align="center">
@@ -14,49 +14,34 @@
   <a href="./LICENSE"><img alt="License: MIT" src="https://img.shields.io/badge/license-MIT-blue.svg"></a>
 </p>
 
-<br>
+## Purpose
 
-## Why this exists
+PMP builds graduate-level engineering capability without separating study from real work. Agents help plan, research, teach, examine, and critique. Official documentation, textbooks, papers, source code, benchmarks, and observed system behavior remain the authorities.
 
-Personal Mastery Program is a public training system for building graduate-level capability without treating a degree as the only valid path. It uses agents as tutors, planners, examiners, and critics, while grounding the curriculum in textbooks, university courses, papers, official docs, source code, benchmarks, and real projects.
+The program is career-directed, but capability comes before portfolio theater. Its current center of gravity is AI-native backend and product systems: cloud platforms, production agents, reliability, data systems, and technical delivery.
 
-The first track, CS/AI Systems, is aimed at becoming an AI-native software engineer who can build and operate serious backend systems for LLM and agentic products.
+## How it works
 
-## What this is not
+1. Select a durable capability and a real decision or use case in an active project.
+2. Open a temporary learning cycle in this repo.
+3. Do reconnaissance before high-cost domain decisions, then use the project's normal design and delivery workflow.
+4. Keep specs, ADRs, code, tests, and operational evidence in the project that owns them.
+5. Assess the linked evidence here and update the capability only when the judgment changes.
 
-This is not an accredited credential, a content course, or a promise that private studying is enough. The program only works if it produces evidence: repositories, demos, essays, benchmarks, reproductions, pull requests, architecture notes, and project milestones.
+PMP does not copy project documentation and does not require a permanent course workspace for every learning need.
 
-## Operating model
+## Repo map
 
-- Capability first, legibility second.
-- Agents teach and examine; sources are authorities.
-- Every module produces evidence, but not every module has to become public performance.
-- Module work happens in small `/teach` workspaces with explicit contracts.
-- Program-level progress is reviewed from the Git delta.
-
-## Current focus
-
-Active module: [RAG Evaluation for Program Docs](./tracks/cs-ai-systems/rag-evaluation/) in the CS/AI Systems track.
-
-## Current structure
-
-- [PROGRAM.md](./PROGRAM.md) defines the mission, principles, scope, and constraints.
-- [ROADMAP.md](./ROADMAP.md) tracks active phases, tracks, and candidate modules.
-- [PROGRESS.md](./PROGRESS.md) records module progress and weekly review outcomes.
-- [ARTIFACTS.md](./ARTIFACTS.md) indexes validated artifacts and public proof.
-- [IDEAS.md](./IDEAS.md) captures future tracks, essays, modules, and experiments.
-- [CONTEXT.md](./CONTEXT.md) defines the domain language agents should use.
+- [PROGRAM.md](./PROGRAM.md): stable mission, operating model, and boundaries.
+- [CAPABILITIES.md](./CAPABILITIES.md): priorities, project bindings, and assessed evidence.
+- [CONTEXT.md](./CONTEXT.md): canonical program vocabulary.
+- [reviews/](./reviews/): Git-backed review and assessment decisions.
+- [GitHub Issues](https://github.com/giacomoguidotto/personal-mastery-program/issues): active learning cycles and proposed changes.
 
 ## Validation
-
-Run the canonical local check before claiming the repo is valid:
 
 ```sh
 bash scripts/validate.sh
 ```
 
-CI runs the same validation command.
-
-## Contributing
-
-This is primarily a personal curriculum in public, reusable second. Suggestions are welcome when they improve the training system, evidence quality, source quality, or reproducibility. See [.github/CONTRIBUTING.md](./.github/CONTRIBUTING.md).
+See [.github/CONTRIBUTING.md](./.github/CONTRIBUTING.md) for contribution boundaries.
