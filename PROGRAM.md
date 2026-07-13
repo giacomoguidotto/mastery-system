@@ -34,11 +34,11 @@ Each project repo owns:
 
 The project agent follows the project's existing workflow. PMP does not become an approval service for routine engineering decisions.
 
-For active project labs, add this thin instruction to the project's agent guidance:
-
-> Before settling a high-cost decision involving unfamiliar domain constraints, use `domain-reconnaissance` and treat its decision packet as input to shaping. Trigger it again if implementation or review reveals that a load-bearing assumption may be wrong. Keep the decision and all downstream artifacts in this project.
+Active Project Labs carry a thin instruction block with two responsibilities: run `domain-reconnaissance` around high-cost unfamiliar decisions, and post a structured assessment handoff to the linked PMP Learning Cycle when its Evidence target is ready. The project agent labels the cycle `ready-for-agent`; it does not assess the Capability.
 
 A candidate project becomes an active Project Lab only when this instruction is installed in that project and a PMP Learning Cycle links to the owning project issue. Candidate mappings alone do not activate PMP behavior.
+
+The issue comment is the durable cross-task handoff. Starting or resuming a PMP assessment task is currently a human or external-automation action; reconstructing project context by hand is not.
 
 ## Portfolio strategy
 

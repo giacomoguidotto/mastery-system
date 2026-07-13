@@ -28,8 +28,10 @@ This repo is the public control plane for the Personal Mastery Program.
 4. Use `domain-reconnaissance` before settling a high-cost decision involving unfamiliar domain constraints. Trigger it again if implementation or review challenges a load-bearing assumption.
 5. Treat reconnaissance as input to the current stage, not a parallel workflow. Before shaping, return its packet to the grill. On a later trigger, pause delivery and reopen the affected decision, spec, and tickets; resume only when they agree again.
 6. Keep the reconnaissance packet and resulting decisions in the project repo.
-7. Return to PMP for teaching, oral defense, evidence review, and assessment.
-8. Close the cycle. Update `CAPABILITIES.md` only if its priority, binding, status, or validated evidence changed.
+7. When the Evidence target is ready, require the project agent to post an `## Assessment handoff` comment on the linked cycle with the project issue, evidence links, decisions and constraints, validation, known limits, and unresolved questions. It then adds `ready-for-agent` to the PMP issue.
+8. A PMP assessment task starts when the user or external automation invokes it with the cycle issue. Fetch the issue, its handoff comment, and linked project evidence; do not ask the user to reconstruct that context.
+9. Teach or examine only where the evidence leaves a real gap, then record the evidence-bounded assessment.
+10. Close the cycle. Update `CAPABILITIES.md` only if its priority, binding, status, or validated evidence changed.
 
 Do not make PMP a blocking approval step for routine project work.
 
