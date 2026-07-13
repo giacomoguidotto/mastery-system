@@ -13,6 +13,8 @@ Capability ID and the specific ability this cycle should improve or assess.
 
 Owning project, real decision or use case, and link to its project issue.
 
+- [ ] The project's agent guidance contains the thin `domain-reconnaissance` trigger defined in `PROGRAM.md`
+
 ## Why now
 
 Why this seam is timely and more useful than an artificial exercise.
