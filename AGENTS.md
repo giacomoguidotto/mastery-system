@@ -1,6 +1,6 @@
 # Agent Instructions
 
-This repo is the public control plane for the Personal Mastery Program.
+This repo is the public control plane for Mastery System.
 
 ## Source of truth
 
@@ -16,24 +16,24 @@ This repo is the public control plane for the Personal Mastery Program.
 - `CAPABILITIES.md` is the only durable capability, priority, project-binding, and validated-evidence registry.
 - Active Learning Cycles are GitHub Issues created from the learning-cycle template.
 - A Project Lab owns its reconnaissance, decisions, issues, ADRs, prototypes, specs, tickets, code, tests, reviews, and operational evidence.
-- PMP links to project artifacts and assesses them. Do not copy their content here.
+- Mastery System links to project artifacts and assesses them. Do not copy their content here.
 - Teaching is pull-based. Create a lesson or exercise only when a cycle exposes a specific learning gap; do not create permanent module scaffolding by default.
 - Keep root docs short and low-churn. Put review history in `reviews/`, active state in issues, and project state in project repos.
 
 ## Learning-cycle behavior
 
 1. Bind one primary Capability to a real Project Lab decision or use case.
-2. Record the starting diagnostic, knowledge risk, evidence target, and assessment method in the PMP issue.
+2. Record the starting diagnostic, knowledge risk, evidence target, and assessment method in the Mastery System issue.
 3. In the project repo, follow `wayfinder` or `grill-with-docs` → `prototype` when empirical exploration is needed → `to-spec` → `to-tickets` → `implement` → `code-review`.
 4. Use `domain-reconnaissance` before settling a high-cost decision involving unfamiliar domain constraints. Trigger it again if implementation or review challenges a load-bearing assumption.
 5. Treat reconnaissance as input to the current stage, not a parallel workflow. Before shaping, return its packet to the grill. On a later trigger, pause delivery and reopen the affected decision, spec, and tickets; resume only when they agree again.
 6. Keep the reconnaissance packet and resulting decisions in the project repo.
-7. When the Evidence target is ready, require the project agent to post an `## Assessment handoff` comment on the linked cycle with the project issue, evidence links, decisions and constraints, validation, known limits, and unresolved questions. It then adds `ready-for-agent` to the PMP issue.
-8. A PMP assessment task starts when the user or external automation invokes it with the cycle issue. Fetch the issue, its handoff comment, and linked project evidence; do not ask the user to reconstruct that context.
+7. When the Evidence target is ready, require the project agent to post an `## Assessment handoff` comment on the linked cycle with the project issue, evidence links, decisions and constraints, validation, known limits, and unresolved questions. It then adds `ready-for-agent` to the Mastery System issue.
+8. A Mastery System assessment task starts when the user or external automation invokes it with the cycle issue. Fetch the issue, its handoff comment, and linked project evidence; do not ask the user to reconstruct that context.
 9. Teach or examine only where the evidence leaves a real gap, then record the evidence-bounded assessment.
 10. Close the cycle. Update `CAPABILITIES.md` only if its priority, binding, status, or validated evidence changed.
 
-Do not make PMP a blocking approval step for routine project work.
+Do not make Mastery System a blocking approval step for routine project work.
 
 ## Evidence rules
 

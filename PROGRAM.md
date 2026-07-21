@@ -1,16 +1,16 @@
-# Program
+# Mastery System
 
 ## Mission
 
-Build graduate-level, publicly auditable capability for AI-native backend and product systems work. Use real projects as laboratories, and use PMP as the control plane for priorities, teaching, and assessment.
+Build graduate-level, publicly auditable capability for AI-native backend and product systems work. Use real projects as laboratories, and use Mastery System as the owner of priorities, teaching, and assessment.
 
 A formal Master's remains optional. The immediate goal is stronger judgment and production evidence, not curriculum completion for its own sake.
 
 ## Operating model
 
-PMP coordinates Capabilities, Learning Cycles, Project Labs, Evidence, and Assessments as defined in [CONTEXT.md](./CONTEXT.md).
+Mastery System coordinates Capabilities, Learning Cycles, Project Labs, Evidence, and Assessments as defined in [CONTEXT.md](./CONTEXT.md).
 
-Capabilities outlive cycles. Cycles close. Project artifacts stay in project repos. PMP stores links and judgments, not copies.
+Capabilities outlive cycles. Cycles close. Project artifacts stay in project repos. Mastery System stores links and judgments, not copies.
 
 ## The loop
 
@@ -18,10 +18,10 @@ A cycle diagnoses a gap, binds it to a real project seam, and defines evidence t
 
 ## Project boundary
 
-PMP owns:
+Mastery System owns:
 
 - capability strategy and career-gap priorities
-- project-to-capability mapping
+- project-to-Capability bindings recorded by Cycle Proposals and Learning Cycles
 - diagnostics, teaching, oral defense, and assessment
 - the curated index of validated evidence
 
@@ -32,13 +32,13 @@ Each project repo owns:
 - issues, ADRs, prototypes, specs, tickets, code, tests, and reviews
 - deployment and operational evidence
 
-The project agent follows the project's existing workflow. PMP does not become an approval service for routine engineering decisions.
+The project agent follows the project's existing workflow. Mastery System does not become an approval service for routine engineering decisions.
 
-Active Project Labs carry a thin instruction block with two responsibilities: run `domain-reconnaissance` around high-cost unfamiliar decisions, and post a structured assessment handoff to the linked PMP Learning Cycle when its Evidence target is ready. The project agent labels the cycle `ready-for-agent`; it does not assess the Capability.
+Active Project Labs carry a thin instruction block with two responsibilities: run `domain-reconnaissance` around high-cost unfamiliar decisions, and post a structured assessment handoff to the linked Mastery System Learning Cycle when its Evidence target is ready. The project agent labels the cycle `ready-for-agent`; it does not assess the Capability.
 
-A candidate project becomes an active Project Lab only when this instruction is installed in that project and a PMP Learning Cycle links to the owning project issue. Candidate mappings alone do not activate PMP behavior.
+A candidate project becomes an active Project Lab only when this instruction is installed in that project and a Mastery System Learning Cycle links to the owning project issue. Candidate mappings alone do not activate Mastery System behavior.
 
-The issue comment is the durable cross-task handoff. Starting or resuming a PMP assessment task is currently a human or external-automation action; reconstructing project context by hand is not.
+The issue comment is the durable cross-task handoff. Starting or resuming a Mastery System assessment task is currently a human or external-automation action; reconstructing project context by hand is not.
 
 ## Portfolio strategy
 

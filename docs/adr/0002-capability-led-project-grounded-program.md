@@ -1,11 +1,11 @@
 # Capability-Led, Project-Grounded Program
 
-![Status: Accepted](https://img.shields.io/badge/status-accepted-brightgreen)
+![Status: Superseded](https://img.shields.io/badge/status-superseded-lightgrey)
 
-Status: Accepted
+Status: Superseded
 Date: 2026-07-13
 Supersedes: 0001-public-program-operating-system.md
-Superseded by: None
+Superseded by: 0003-standalone-mastery-system-interfaces.md
 
 ## Decision
 

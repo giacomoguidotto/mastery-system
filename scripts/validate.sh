@@ -7,6 +7,8 @@ required_files=(
   "PROGRAM.md"
   "CAPABILITIES.md"
   "CONTEXT.md"
+  "main.mjs"
+  "package.json"
   "LICENSE"
   "SECURITY.md"
   ".github/CONTRIBUTING.md"
@@ -21,7 +23,11 @@ required_files=(
   "docs/agents/issue-tracker.md"
   "docs/agents/triage-labels.md"
   "docs/agents/domain.md"
+  "docs/interfaces.md"
   "docs/adr/0002-capability-led-project-grounded-program.md"
+  "docs/adr/0003-standalone-mastery-system-interfaces.md"
+  "skills/public/setup-mastery-system/SKILL.md"
+  "skills/public/setup-mastery-system/resources/setup.mjs"
 )
 
 for file in "${required_files[@]}"; do
@@ -46,8 +52,8 @@ for file in "${retired_files[@]}"; do
   fi
 done
 
-if ! grep -q "Personal Mastery Program" README.md; then
-  echo "README.md must name Personal Mastery Program" >&2
+if ! grep -q "Mastery System" README.md; then
+  echo "README.md must name Mastery System" >&2
   exit 1
 fi
 
@@ -63,4 +69,6 @@ if find tracks -type f -print -quit 2>/dev/null | grep -q .; then
   exit 1
 fi
 
-echo "PMP repo validation passed."
+node --test
+
+echo "Mastery System repo validation passed."

@@ -2,7 +2,7 @@
 
 ## Evidence inspected
 
-- PMP commits and issues:
+- Mastery System commits and issues:
 - Project commits and decisions:
 - Tests, benchmarks, deployments, or reviews:
 

@@ -1,10 +1,14 @@
 # Context
 
-Use these terms consistently across PMP work.
+Use these terms consistently across Mastery System work.
 
-## Personal Mastery Program
+## Mastery System
 
-The portfolio control plane. It owns capability priorities, project mappings, learning cycles, and assessments. It does not own project implementation artifacts.
+The capability system. It owns Capability priorities, Cycle Proposal and Learning Cycle semantics, cycle project bindings, and assessments. It does not own project implementation artifacts.
+
+## Cycle Proposal
+
+An open, machine-managed Learning Cycle candidate. Human acceptance promotes the same GitHub issue to an active Learning Cycle. Its stable managed identity is an external `mapping_key`, never its title.
 
 ## Capability
 
@@ -21,7 +25,7 @@ The current evidence-bounded assessment of a Capability:
 
 ## Learning Cycle
 
-A temporary PMP issue that binds one primary capability to a real project decision or use case, starting diagnosis, evidence target, and assessment method. It is not an implementation ticket.
+A temporary Mastery System issue that binds one primary Capability to a real project decision or use case, starting diagnosis, evidence target, and assessment method. It is not an implementation ticket.
 
 ## Project Lab
 
@@ -33,7 +37,7 @@ A bounded investigation of authoritative constraints before a high-cost decision
 
 ## Evidence
 
-Observable, possibly rough work that may support an Assessment. PMP links to Evidence in its owning project rather than copying it.
+Observable, possibly rough work that may support an Assessment. Mastery System links to Evidence in its owning project rather than copying it.
 
 ## Validated Evidence
 
@@ -45,7 +49,7 @@ Validated evidence intentionally packaged for recruiters, peers, customers, futu
 
 ## Assessment
 
-PMP's explicit, evidence-bounded judgment of a capability. An assessment records what was demonstrated, under which conditions, and what remains unproven.
+Mastery System's explicit, evidence-bounded judgment of a Capability. An assessment records what was demonstrated, under which conditions, and what remains unproven.
 
 ## Authority
 

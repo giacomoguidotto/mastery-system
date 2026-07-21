@@ -1,6 +1,6 @@
 # Capabilities
 
-This is PMP's durable portfolio registry. It tracks priorities, suitable project labs, assessed status, and links to validated evidence. Active learning cycles and uncommitted ideas belong in GitHub Issues.
+This is Mastery System's durable portfolio registry. It tracks priorities, suitable Project Labs, assessed status, and links to Validated Evidence. Active Learning Cycles and uncommitted ideas belong in GitHub Issues.
 
 Status values are defined under [Capability Status](./CONTEXT.md#capability-status).
 
