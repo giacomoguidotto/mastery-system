@@ -186,7 +186,11 @@ export async function reconcileCycles(client, root, request, clock = () => new D
       }
       continue;
     }
-    const body = renderCycleBody(item, "proposal", current.issue.body);
+    const recoveryKeys = [...new Set([
+      ...(current.metadata.managed_prerequisite_mapping_keys ?? []),
+      ...(item.prerequisite_mapping_keys ?? [])
+    ])].sort();
+    const body = renderCycleBody({ ...item, prerequisite_mapping_keys: recoveryKeys }, "proposal", current.issue.body);
     const changed = current.issue.title !== item.title || current.issue.body !== body;
     if (changed) {
       current.issue = await client.updateIssue(current.issue.number, { title: item.title, body });
@@ -216,18 +220,41 @@ export async function reconcileCycles(client, root, request, clock = () => new D
     }
     if (blocked) continue;
     const actual = await client.listBlockedBy(current.issue.number);
-    const managedBefore = new Set(current.previousManagedPrerequisiteKeys ?? current.metadata.managed_prerequisite_mapping_keys ?? []);
+    const managedBefore = new Set(current.metadata.managed_prerequisite_mapping_keys ?? []);
     const byIssueId = new Map([...byKey.values()].map(value => [value.issue.id, value]));
-    for (const dependency of actual) {
-      const dependencyCycle = byIssueId.get(dependency.id);
-      if (dependencyCycle && managedBefore.has(dependencyCycle.metadata.mapping_key) && !desiredKeys.has(dependencyCycle.metadata.mapping_key)) {
-        await client.removeDependency(current.issue.number, dependency.id);
+    try {
+      for (const dependency of actual) {
+        const dependencyCycle = byIssueId.get(dependency.id);
+        if (dependencyCycle && managedBefore.has(dependencyCycle.metadata.mapping_key) && !desiredKeys.has(dependencyCycle.metadata.mapping_key)) {
+          await client.removeDependency(current.issue.number, dependency.id);
+        }
       }
+      const actualIds = new Set(actual.map(value => value.id));
+      for (const key of desiredKeys) {
+        const prerequisite = byKey.get(key);
+        if (!actualIds.has(prerequisite.issue.id)) await client.addDependency(current.issue.number, prerequisite.issue.id);
+      }
+    } catch (error) {
+      result.failed.push(resultItem(item, current.issue, `dependency-write-failed:${error.message}`));
+      continue;
     }
-    const actualIds = new Set(actual.map(value => value.id));
-    for (const key of desiredKeys) {
-      const prerequisite = byKey.get(key);
-      if (!actualIds.has(prerequisite.issue.id)) await client.addDependency(current.issue.number, prerequisite.issue.id);
+    const verified = await client.listBlockedBy(current.issue.number);
+    const verifiedManagedKeys = new Set(verified
+      .map(dependency => byIssueId.get(dependency.id)?.metadata.mapping_key)
+      .filter(key => key && managedBefore.has(key)));
+    const expectedManagedKeys = [...desiredKeys].sort();
+    if (JSON.stringify([...verifiedManagedKeys].sort()) !== JSON.stringify(expectedManagedKeys)) {
+      result.failed.push(resultItem(item, current.issue, "dependency-post-check-drift"));
+      continue;
+    }
+    const finalBody = renderCycleBody(item, "proposal", current.issue.body);
+    if (finalBody !== current.issue.body) {
+      current.issue = await client.updateIssue(current.issue.number, { body: finalBody });
+      current.metadata = parseCycleMetadata(finalBody);
+      if (!result.created.some(value => value.mapping_key === item.mapping_key) && !result.updated.some(value => value.mapping_key === item.mapping_key)) {
+        result.unchanged = result.unchanged.filter(value => value.mapping_key !== item.mapping_key);
+        result.updated.push(resultItem(item, current.issue, "managed-dependencies-updated"));
+      }
     }
   }
 

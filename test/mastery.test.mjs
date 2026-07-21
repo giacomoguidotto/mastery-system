@@ -53,6 +53,12 @@ class FakeGitHub {
   }
 }
 
+class IgnoredRemovalGitHub extends FakeGitHub {
+  async removeDependency(number, issueId) {
+    this.writes.push(["ignored-remove-dependency", number, issueId]);
+  }
+}
+
 function proposal(mapping_key, overrides = {}) {
   return {
     mapping_key,
@@ -161,4 +167,21 @@ test("manual dependencies remain when managed dependencies change", async () => 
   const result = await reconcileCycles(client, root, await requestFor(client, desired), clock);
   assert.equal(result.status, "completed");
   assert.deepEqual([...client.dependencies.get(11)], [12]);
+});
+
+test("interrupted dependency removal retains ownership for recovery", async () => {
+  const a = proposal("mapping-a");
+  const b = proposal("mapping-b", { prerequisite_mapping_keys: ["mapping-a"] });
+  const factory = new FakeGitHub();
+  const issueA = factory.issue({ id: 10, number: 10, body: renderCycleBody(a), html_url: "https://github.test/issues/10" });
+  const issueB = factory.issue({ id: 11, number: 11, body: renderCycleBody(b), html_url: "https://github.test/issues/11" });
+  const client = new IgnoredRemovalGitHub([issueA, issueB], new Map([[11, [10]]]));
+  const desired = [a, proposal("mapping-b")];
+  const result = await reconcileCycles(client, root, await requestFor(client, desired), clock);
+  assert.equal(result.status, "failed");
+  assert.equal(result.failed[0].reason, "dependency-post-check-drift");
+  const snapshot = await snapshotCycles(client, root, clock);
+  const retained = client.issues.find(issue => issue.number === 11);
+  assert.match(retained.body, /managed_prerequisite_mapping_keys.*mapping-a/);
+  assert.ok(snapshot.cycles.find(cycle => cycle.mapping_key === "mapping-b").dependencies.includes("https://github.test/issues/10"));
 });

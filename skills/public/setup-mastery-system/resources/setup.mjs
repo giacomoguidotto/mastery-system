@@ -46,7 +46,7 @@ async function observe(root) {
   const labels = ghPaged(`repos/${repo}/labels?per_page=100`, root);
   for (const [name, desired] of Object.entries(LABELS)) {
     const actual = labels.find(label => label.name === name);
-    checks.push({ id: `label:${name}`, status: actual ? "converged" : "drifted" });
+    checks.push({ id: `label:${name}`, status: actual && actual.color.toLowerCase() === desired.color && actual.description === desired.description ? "converged" : "drifted" });
   }
   try {
     gh([`repos/${repo}/contents/.github/ISSUE_TEMPLATE/learning_cycle.md?ref=${metadata.default_branch}`], root);
@@ -85,6 +85,9 @@ export async function runSetup({ mode = "reconcile", root = process.cwd() } = {}
       const actual = current.find(label => label.name === name);
       if (!actual) {
         gh(["--method", "POST", `repos/${repo}/labels`, "-f", `name=${name}`, "-f", `color=${desired.color}`, "-f", `description=${desired.description}`], root);
+        actions.push(`label:${name}`);
+      } else if (actual.color.toLowerCase() !== desired.color || actual.description !== desired.description) {
+        gh(["--method", "PATCH", `repos/${repo}/labels/${encodeURIComponent(name)}`, "-f", `new_name=${name}`, "-f", `color=${desired.color}`, "-f", `description=${desired.description}`], root);
         actions.push(`label:${name}`);
       }
     }
