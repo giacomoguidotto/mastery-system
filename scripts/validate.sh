@@ -74,6 +74,11 @@ if ! grep -q -- "--verify-tag" .github/workflows/release.yml; then
   exit 1
 fi
 
+if ! grep -q "gh release view" .github/workflows/release.yml; then
+  echo "Release workflow must resume safely after partial publication" >&2
+  exit 1
+fi
+
 for file in README.md AGENTS.md .github/CONTRIBUTING.md; do
   if ! grep -q "bash scripts/validate.sh" "$file"; then
     echo "$file must mention the canonical validation command" >&2
