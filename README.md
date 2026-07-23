@@ -56,4 +56,10 @@ interfaces return revisioned, capability-scoped JSON. See
 bash scripts/validate.sh
 ```
 
+## Release model
+
+Mastery System uses Conventional Commits and independent semantic-version
+releases. Release versions identify immutable source provenance and do not
+assert compatibility with other Systems.
+
 See [.github/CONTRIBUTING.md](./.github/CONTRIBUTING.md) for contribution boundaries.

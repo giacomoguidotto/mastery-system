@@ -53,7 +53,9 @@ Then inspect open learning-cycle issues and the linked project commits, decision
 
 ## Repository operations
 
-- Use Conventional Commits.
+- Use Conventional Commits. `feat` triggers a minor release, `fix` triggers a
+  patch release, and a `!` marker or `BREAKING CHANGE` footer triggers a major
+  release. Other commit types do not release.
 - Run `bash scripts/validate.sh` before claiming the repo is validated.
 - When an agent completes a review, assessment, lesson, or capability-registry change, validate, stage only the intended files, commit, and push unless the user explicitly asks to keep the work local.
 - Project artifacts follow the owning project's publication rules.

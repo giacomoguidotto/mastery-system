@@ -19,6 +19,8 @@ required_files=(
   ".github/ISSUE_TEMPLATE/feature_request.md"
   ".github/ISSUE_TEMPLATE/learning_cycle.md"
   ".github/workflows/ci.yml"
+  ".github/workflows/release.yml"
+  "scripts/bump-version.sh"
   "templates/WEEKLY_REVIEW.md"
   "docs/agents/issue-tracker.md"
   "docs/agents/triage-labels.md"
@@ -54,6 +56,21 @@ done
 
 if ! grep -q "Mastery System" README.md; then
   echo "README.md must name Mastery System" >&2
+  exit 1
+fi
+
+if ! grep -q "scripts/bump-version.sh" .github/workflows/release.yml; then
+  echo "Release workflow must use the independent version script" >&2
+  exit 1
+fi
+
+if ! grep -q "gh release create" .github/workflows/release.yml; then
+  echo "Release workflow must publish a stable GitHub release" >&2
+  exit 1
+fi
+
+if ! grep -q -- "--verify-tag" .github/workflows/release.yml; then
+  echo "Release workflow must verify the source tag before publication" >&2
   exit 1
 fi
 
