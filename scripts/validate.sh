@@ -79,6 +79,40 @@ if ! grep -q "gh release view" .github/workflows/release.yml; then
   exit 1
 fi
 
+if ! grep -q ".immutable == true" .github/workflows/release.yml; then
+  echo "Release workflow must verify immutability before notification" >&2
+  exit 1
+fi
+
+if ! grep -q "Verify Trigger App configuration" .github/workflows/release.yml; then
+  echo "Release workflow must fail clearly on missing Trigger configuration" >&2
+  exit 1
+fi
+
+if ! grep -q "permission-actions: write" .github/workflows/release.yml; then
+  echo "Release workflow must request target-scoped Actions write" >&2
+  exit 1
+fi
+
+if ! grep -q \
+  "repos/giacomoguidotto/skills/actions/workflows/reconcile.yml/dispatches" \
+  .github/workflows/release.yml; then
+  echo "Release workflow must wake Distribution Bundle reconciliation" >&2
+  exit 1
+fi
+
+for input in source_repository source_release_id source_tag; do
+  if ! grep -Fq "inputs[$input]" .github/workflows/release.yml; then
+    echo "Release workflow must send the $input audit hint" >&2
+    exit 1
+  fi
+done
+
+if grep -q "permission-contents: write" .github/workflows/release.yml; then
+  echo "Source Trigger token must not write Distribution Bundle contents" >&2
+  exit 1
+fi
+
 for file in README.md AGENTS.md .github/CONTRIBUTING.md; do
   if ! grep -q "bash scripts/validate.sh" "$file"; then
     echo "$file must mention the canonical validation command" >&2
